@@ -1,24 +1,32 @@
-const usuarios = {
-  login(usuario){
-    let dato = DB[usuario];
-    
-    if(dato === undefined) {
-      $(this).trigger('fracaso', usuario);
-    } else {
-      $(this).trigger('exito', dato);
-    }
-  },
-  registrar(usuario) {
-    if(!DB.hasOwnProperty(usuario)){
-      DB[usuario] = {
-        nombre: usuario,
-        creditos: 50
+const ServicioUsuarios = (function CrearServicioUsuarios() {
+  let nombre = '';
+  let saldo = 0;
+  return {
+    login: function(usuario){
+      let dato = DB[usuario];
+      
+      if(dato === undefined) {
+        $(this).trigger('fracaso', usuario);
+      } else {
+        this.nombre = dato.nombre;
+        this.saldo = dato.creditos;
+        $(this).trigger('exito', dato);
       }
-    } else {
-      console.log('Usuario ya existe');
+    },
+    registrar: function(usuario) {
+      if(!DB.hasOwnProperty(usuario)){
+        DB[usuario] = {
+          nombre: usuario,
+          creditos: 50
+        }
+        this.login(usuario);
+      } else {
+        console.log('Usuario ya existe');
+      }
     }
   }
-};
+}
+)();
 
 /*const usuarios = {
   login(username){
