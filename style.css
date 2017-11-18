@@ -1,0 +1,45 @@
+#app {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px;
+    position: absolute;
+    min-width: 60%;
+    min-height: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px black solid;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+#login {
+    margin-bottom: 20px;
+}
+
+#mensajes {
+    line-height: 30px;
+}
+
+#spinner {
+    height: 30px;
+    width: 30px;
+    display: none;
+    vertical-align: middle;
+}
+
+#datosUsuario {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lavender;
+    text-align: right;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+#nombreUsuario {
+    font-weight: bold;
+}

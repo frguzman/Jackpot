@@ -24,6 +24,15 @@ const ServicioUsuarios = (function CrearServicioUsuarios() {
       } else {
         console.log('Usuario ya existe');
       }
+    },
+    modificarSaldo: function(cantidad) {
+      if ((this.saldo + cantidad) >= 0) {
+        this.saldo += cantidad;
+        $(this).trigger('saldoModificado');
+      } else {
+        console.info('Saldo insuficiente!');
+        return;
+      }
     }
   }
 }
