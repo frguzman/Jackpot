@@ -1,0 +1,33 @@
+{
+    "normal": {
+      "probabilidad": 0.25,
+      "multiplicadorApuesta": 1,
+      "combinaciones": [
+        ["limon", "limon", "*"],
+        ["uva", "uva", "*"],
+        ["manzana", "manzana", "*"],
+        ["comodin", "*", "*"],
+        ["*", "*", "*"]
+      ]
+    },
+    "elevado": {
+      "probabilidad": 0.04,
+      "multiplicadorApuesta": 2,
+      "combinaciones": [
+        ["limon", "limon", "comodin"],
+        ["uva", "uva", "comodin"],
+        ["manzana", "manzana", "comodin"],
+        ["comodin", "comodin", "*"]
+      ]
+    },
+    "mega": {
+      "probabilidad": 0.01,
+      "multiplicadorApuesta": 10,
+      "combinaciones": [
+          ["limon", "limon", "limon"],
+          ["uva", "uva", "uva"],
+          ["manzana", "manzana", "manzana"],
+          ["comodin", "comodin", "comodin"]
+        ]
+    }
+  }

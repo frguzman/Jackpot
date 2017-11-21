@@ -23,7 +23,7 @@ function controladorLogin(vistaLogin) {
   function dibujarExito(evento, usuario) {
     console.log('exito', usuario);
     mensajes.html('Ingresando como <em>' + usuario.nombre + '</em>.')
-    setTimeout(() => {Rutas.cargar('juego')}, 3000);
+    setTimeout(() => {Rutas.cargar('app')}, 3000);
   }
 
   $(ServicioUsuarios).on('fracaso', dibujarFracaso);

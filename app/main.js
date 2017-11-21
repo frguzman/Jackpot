@@ -2,7 +2,8 @@ let scripts = [
     'app/rutas.js',
     'app/usuarios.js',
     'app/login.js',
-    'app/juego.js'
+    'premios/premios.js',
+    'app/app.js'
 ]
 
 cargarScripts(scripts);

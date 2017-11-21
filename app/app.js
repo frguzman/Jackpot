@@ -1,4 +1,4 @@
-Rutas.registrar('juego', controladorJuego);
+Rutas.registrar('app', controladorJuego);
 
 let apuesta = 0;
 
