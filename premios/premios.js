@@ -11,18 +11,35 @@ const Premios = (function () {
         },
         almacenarPremios: function(respuesta) {
             let probabilidades = [];
+            let probabilidadPositiva = 0;
+
             Premios.listaPremios = respuesta;
             $.each(respuesta, function(clave, valor) {
                 console.log(valor.probabilidad);
                 probabilidades.push(valor.probabilidad);
+                probabilidadPositiva += valor.probabilidad;
             });
-            Premios.probabilidades = probabilidades.sort();
+
+            probabilidades.push(1 - probabilidadPositiva);
+
+            Premios.probabilidades = probabilidades;
         },
         imprimirError($xhr) {
             console.error($xhr.status, 'cargando premios');
         },
         calcularPremio: function() {
+            let pesos = [];
+            
+            for (i = 0; i < Premios.probabilidades.length; i++) {
+                for (j = 0; j < (Premios.probabilidades[i] * 100); j++) {
+                    pesos.push(i);
+                }
+            }
 
+            numeroAleatorio = aleatorioEntre(0, 99);
+
+            let premio = pesos[numeroAleatorio];
+            return premio;
         }
     }
 })();
